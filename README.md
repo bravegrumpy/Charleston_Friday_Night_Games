@@ -1,2 +1,8 @@
 # Charleston_Friday_Night_Games
-This is a repository I'm making to create a discord bot, that will help with moderation, and information. (I'm relatively new at creating bots/using an API, so this codebase will look amature)
+This repository includes a my attempt to create a bot for the CFNG discord server. I am relatively new to creating bots/using an API. Therefore this codebase will look amature. 
+
+I expect things to improve as more people volunteer to help.
+
+No changes will be implemented to the CFNG server until there is approval by both Paul and myself.
+
+Email me if you want access to my testing server. 
