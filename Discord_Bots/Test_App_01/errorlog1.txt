@@ -1,7 +1,0 @@
-Ignoring exception in on_message
-Traceback (most recent call last):
-  File "C:\Users\robin\AppData\Local\Programs\Python\Python310\lib\site-packages\discord\client.py", line 343, in _run_event
-    await coro(*args, **kwargs)
-  File "C:\Users\robin\Documents\Game_Group\Discord_Bots\Test_App_01\bot.py", line 65, in on_message
-    members = '\n -'.join([member.name for member in client.guilds.members])
-AttributeError: 'list' object has no attribute 'members'
