@@ -1,2 +1,3 @@
 .env
-bot2.py
+err.log
+./err.log
