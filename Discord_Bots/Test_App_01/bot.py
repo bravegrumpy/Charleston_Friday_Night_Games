@@ -1,6 +1,3 @@
-#TOKEN = 'OTk1ODc4MDQ2NjUxMzgzODg4.G-S78h.hvxtqCMrzWONnnI6pAhdcOrvl1gLP5b5mLjIvc'
-#GUILD = 'Brave Grumpy Server'
-
 # bot.py
 import os
 from pathlib import Path
@@ -9,7 +6,13 @@ import discord
 import dotenv
 
 from dotenv import load_dotenv
+load_dotenv()
 
+TOKEN = os.getenv("DISCORD_TOKEN")
+GUILD = os.getenv("DISCORD_GUILD")
+
+print(TOKEN)
+print(GUILD)
 
 import random
 
