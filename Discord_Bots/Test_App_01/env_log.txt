@@ -1,0 +1,2 @@
+DISCORD_TOKEN = {'OTk1ODc4MDQ2NjUxMzgzODg4.Gqjtw6.p0kxAJsk1_lRMwzIgfoMQ2g4EQoKm5m0AEfw_g'}
+DISCORD_GUILD={'Robin Personal Server'}
