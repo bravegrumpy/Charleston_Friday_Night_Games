@@ -1,18 +1,18 @@
-TOKEN = 'OTk1ODc4MDQ2NjUxMzgzODg4.GqUDLK.gtid7DnsH5Qqt3_w6lN_3eKdfhfPijnyrMeNPc'
-GUILD = 'Robin Personal Server'
+#TOKEN = 'OTk1ODc4MDQ2NjUxMzgzODg4.G-S78h.hvxtqCMrzWONnnI6pAhdcOrvl1gLP5b5mLjIvc'
+#GUILD = 'Brave Grumpy Server'
 
 # bot.py
 import os
+from pathlib import Path
 
 import discord
+import dotenv
 
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
+
 
 import random
 
-#load_dotenv()
-#TOKEN = os.getenv('DISCORD_TOKEN')
-#GUILD = os.getenv('DISCORD_GUILD')
 
 intents = discord.Intents.default()
 intents.members = True
@@ -76,5 +76,4 @@ async def on_message(message):
             f'Server Members: \n -{members}'
             )
 
-print(TOKEN)
 client.run(TOKEN)
