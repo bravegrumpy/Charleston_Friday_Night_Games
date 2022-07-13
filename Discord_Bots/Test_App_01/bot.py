@@ -1,4 +1,5 @@
 # bot.py
+from email import message
 import os
 
 import discord
@@ -38,10 +39,11 @@ async def on_member_join(member):
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == client.user: #preventing infinite feedback loop.
         return
 
-    brooklyn_99_quotes = [
+    ## Below are some variables used within this method. 
+    brooklyn_99_quotes = [ #list of brooklyn 99 quotes
         'I\'m the human form of the 💯 emoji.',
         'Bingpot!',
         (
@@ -52,26 +54,30 @@ async def on_message(message):
         'I am bisexual',
         'This is a random chatbot, but I made it, so ya know, its cool'
     ]
+    
+    guild = discord.utils.get(client.guilds, name=GUILD) # same code as seen in line 22.
+    
+    members = '\n -'.join([member.name for member in guild.members]) # same code as seen in line 29.
 
     if message.content == '99!':
         response = random.choice(brooklyn_99_quotes)
         await message.channel.send(response)
-    if 'happy birthday' in message.content.lower():
+    elif 'happy birthday' in message.content.lower():
         await message.channel.send('Happy Birthday! 🎈🎉')
-
-    ## Comment the below two lines and uncommen t line 66 to recreate my errors.
-    # members = ["This is placehoder text. I want it to eventually show",
-    # " the same `members` that is referenced on line 29"]
-
-    # members = '\n -'.join([member.name for member in client.guilds.members])
-
-    guild = discord.utils.get(client.guilds, name=GUILD)
-    
-    members = '\n -'.join([member.name for member in guild.members])
             
-    if message.content == 'members!':
+    elif (message.content == 'members!'):
         await message.channel.send(
             f'Server Members: \n -{members}'
             )
+    elif message.content == 'raise-exception':
+        raise discord.DiscordException
+
+@client.event
+async def on_error(event, *args, **kwargs):
+    with open('err.log', 'a') as f:
+        if event == 'on_message':
+            f.write(f'Unhandled message: {args[0]}\n')
+        else:
+            raise
 
 client.run(TOKEN)
