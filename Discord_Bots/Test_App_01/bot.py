@@ -3,14 +3,14 @@ import os
 
 import discord
 
-#from dotenv import load_dotenv
-#load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
-#TOKEN = os.getenv("DISCORD_TOKEN")
-#GUILD = os.getenv("DISCORD_GUILD")
+TOKEN = os.getenv("DISCORD_TOKEN")
+GUILD = os.getenv("DISCORD_GUILD")
 
-TOKEN = os.environ['DISCORD_TOKEN']
-GUILD = os.environ['DISCORD_GUILD']
+#TOKEN = os.environ['DISCORD_TOKEN']
+#GUILD = os.environ['DISCORD_GUILD']
 
 import random
 
